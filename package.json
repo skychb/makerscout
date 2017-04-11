@@ -1,19 +1,11 @@
 {
-  "name": "makerscout",
+  "name": "parallax-template",
   "version": "1.0.0",
-  "description": "first init",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skychb/makerscout.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/skychb/makerscout/issues"
-  },
-  "homepage": "https://github.com/skychb/makerscout#readme"
+  "license": "ISC"
 }
