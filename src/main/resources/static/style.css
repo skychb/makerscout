@@ -39,7 +39,7 @@ input, button {
 .cont {
   position: relative;
   height: 100%;
-  background-image: url("https://cdn.pixabay.com/photo/2016/09/03/15/31/seascape-1641999_960_720.jpg");
+  background-color:#000;
   background-size: cover;
   overflow: auto;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;

@@ -31,4 +31,9 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping(value="/lobby", method=RequestMethod.GET)
+	public String lobbyView(Model model){
+		return "lobby";
+	}
+	
 }

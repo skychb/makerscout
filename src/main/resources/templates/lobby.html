@@ -30,14 +30,14 @@
                     <a class="nav-item is-tab is-hidden-tablet">Features</a>
                     <a class="nav-item is-tab is-hidden-tablet">Pricing</a>
                     <a class="nav-item is-tab is-hidden-tablet">About</a>
-                    <a class="nav-item is-tab" th:text="${name}">
+                    <a class="nav-item is-tab" th:text="${session.user.name}">
                         <figure class="image is-16x16" style="margin-right: 8px;">
                         <img src="http://bulma.io/images/jgthms.png">
                         </figure>
                         Profile
                     </a>
-                    <a class="nav-item is-tab">TEAM PAGE</a>
-                    <a class="nav-item is-tab">Log out</a>
+                    <a class="nav-item is-tab" th:value="user">TEAM PAGE</a>
+                    <a class="nav-item is-tab" href="/logout">Log out</a>
                     </div>
                 </div>
             </nav>

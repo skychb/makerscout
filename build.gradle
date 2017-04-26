@@ -44,4 +44,6 @@ dependencies {
 	compile("org.springframework:spring-messaging:4.1.6.RELEASE")
 	compile("com.navercorp.lucy:lucy-xss:1.6.3")
 	compile("com.navercorp.lucy:lucy-xss-servlet:2.0.0")
+	compile("org.imgscalr:imgscalr-lib:4.2")
+	
 }

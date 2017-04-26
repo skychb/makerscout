@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../node_modules/bulma/css/bulma.css">
   <link rel="stylesheet" type="text/css" href="../landing.css">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css">
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+ 
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+   
 </head>
 <body>
     <section class="hero">
@@ -47,9 +54,16 @@
                 <div class="title">
                     Uploading your post.
                 </div>
-
+				<form id="postForm" method="post" action="/post">
+					<input class="input" type="text" placeholder="포스트 제목" id="title" name="title">
+					<input class="input" type="text" placeholder="author" id="author" name="author" value="chiho">
+				
+					<textarea class="form-control" id="summernote" name="contents" placeholder="마음껏 적어보아요." maxlength="140" rows="7"></textarea>
+					<div class="form-group">
+            		<button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
+					</div>
+				</form>
             </div>
-            <textarea name="inputArticleContents" class="ckeditor" rows='20' cols="40">
             </textarea>
         </div>
     </section>
@@ -64,6 +78,41 @@
 </footer>
 
   <script async type="text/javascript" src="../src/bulma.js"></script>
-  <script type="text/javascript" src="../node_modules/ckeditor/ckeditor.js"></script>
+  <script type="text/javascript">
+  	$(document).ready(function(){
+  		$("#summernote").summernote({
+  			height: 300,
+  			minHeight: null,
+  			maxHeight: null,
+  			focus:true,
+  			callbacks: {
+  				onImageUpload: function(files, editor, welEditable){
+  					for(var i = files.length - 1; i >= 0; i--){
+  						sendFile(files[i], this);
+  					}
+  				}
+  			}
+  		});
+  	});
+  	
+  	function sendFile(file, el){
+  		var form_data = new FormData();
+  		form_data.append('file', file);
+  		$.ajax({
+  			data: form_data,
+  			type: "POST",
+  			url: '/image',
+            cache: false,
+            contentType: false,
+            enctype: 'multipart/form-data',
+            processData: false,
+            success: function(url) {
+              $(el).summernote('editor.insertImage', url);
+              $('#imageBoard > ul').append('<li><img src="'+url+'" width="480" height="auto"/></li>');
+            }
+  		});
+  	}
+  
+  </script>
 </body>
 </html>

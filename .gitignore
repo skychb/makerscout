@@ -4,7 +4,8 @@
 src/main/resources/static/node_modules/
 src/main/resources/static/fonts
 src/main/resources/application.properties
-
+d:/
+/d:/
 ### STS ###
 .apt_generated
 .classpath

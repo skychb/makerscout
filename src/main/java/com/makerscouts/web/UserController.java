@@ -1,6 +1,7 @@
 package com.makerscouts.web;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,20 +17,25 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 	
-	@RequestMapping(value="/login/form")
-	public String accessLogin(String a){
-		
+	@RequestMapping(value="/login/form", method = RequestMethod.GET)
+	public String accessLogin(){
 		return "login";
 	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public String login(@RequestParam String userId, @RequestParam String userPassword, HttpServletRequest request){
-		User user = userRepository.findById(userId);
-		if(userPassword != user.getPassword()){
-			return "login";
-		}else{
+	public String login(@RequestParam String id, @RequestParam String password, HttpServletRequest request){
+		User user = userRepository.findById(id);
+		if(password.equals(user.getPassword())){
 			request.getSession().setAttribute("user", user);
 			return "redirect:/lobby";
+		}else{
+			return "login_fail";
 		}
 	}
+	
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String logout(HttpSession session){
+		session.removeAttribute("user");
+		return "index";
+	};
 }

@@ -1,7 +1,6 @@
 package com.makerscouts.domain.post;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -27,9 +26,13 @@ public class Post implements Serializable{
 	@Column(nullable = false)
 	private String author;
 	
-	private Timestamp timestamp;
+	@Column
+	private Date timestamp;
 	
-	@Column(nullable = false)
+	@Column
+	private Date updated;
+	
+	@Column(nullable = false, length=100000000)
 	private String contents;
 	
 	private Post(){};

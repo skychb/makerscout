@@ -18,9 +18,8 @@ public class UserApiController {
 	private UserRepository userRepository;
 	
 	@RequestMapping(value="/api", method=RequestMethod.GET)
-	public User createUser(){
-		User newUser = new User("asdf", "asdF", "asdf", "asd");
-		userRepository.save(newUser);
-		return newUser;
+	public List<User> createUser(){
+		List<User> userList = userRepository.findAll();
+		return userList;
 	}	
 }
