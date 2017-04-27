@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon"
+	href="http://www.makerschool.kr/beta/wp-content/uploads/2017/02/cropped-pavicon-32x32.png"
+	sizes="32x32" />
+<link rel="icon"
+	href="http://www.makerschool.kr/beta/wp-content/uploads/2017/02/cropped-pavicon-192x192.png"
+	sizes="192x192" />
+<link rel="apple-touch-icon-precomposed"
+	href="http://www.makerschool.kr/beta/wp-content/uploads/2017/02/cropped-pavicon-180x180.png" />
+<title>메이커스카우트 | Makerscouts</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="../node_modules/bulma/css/bulma.css">
+<link rel="stylesheet" type="text/css" href="../landing.css">
+</head>
+<body>
+	<section class="hero is-dark" style="height: 400px;">
+		<div class="hero-head">
+			<div class="container">
+				<nav class="nav">
+					<div class="container">
+						<div class="nav-left">
+							<a class="nav-item" href="../index.html"> <img
+								src="http://haeyumsi.cdn3.cafe24.com/makerscouts_logo_or.png"
+								alt="Description">
+							</a>
+						</div>
+						<span class="nav-toggle"> <span></span> <span></span> <span></span>
+						</span>
+						<div class="nav-right nav-menu">
+							<a href="/" class="nav-item"> HOME </a>
+							<!--<span class="nav-item">
+                <a class="button is-default" href="login.html">
+                  
+                </a>
+              </span>-->
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<div class="hero-body" style="margin-top: 50px;">
+			<div class="container has-text-centered">
+				<div class="columns is-vcentered">
+					<div class="column">
+						<h1 style="font-size: 40px;" class="title" th:text=${post.title}>
+							Your post</h1>
+						<br>
+						<h2 class="subtitle" th:text=${post.timestamp}>timestamp</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<section class="hero">
+		<div class="container has-text-centered">
+			<div class="contents" style="margin: 30px;" th:utext=${post.contents}>
+
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="container">
+			<div class="content has-text-centered">
+				<p>
+					<strong> Makerscouts All rights reserved.</strong>
+			</div>
+		</div>
+	</footer>
+	<script async type="text/javascript" src="../src/bulma.js"></script>
+</body>
+</html>

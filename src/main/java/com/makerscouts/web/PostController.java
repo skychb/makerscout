@@ -30,7 +30,7 @@ public class PostController {
 //	@RequestMapping(value="", method=RequestMethod.POST)
 //	public String addPost(String title, String author, String contents){
 //		Post newPost = new Post(title, author, contents);
-//		postRepository.save(newPost);
+//		postRepoitory.save(newPost);
 //		return "redirect:/post";
 //	};
 	

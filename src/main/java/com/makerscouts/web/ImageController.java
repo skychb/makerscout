@@ -66,7 +66,7 @@ public class ImageController {
     public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) {
         try {
             UploadFile uploadedFile = imageService.store(file);
-            if(uploadedFile.getSize() <= BYTE_LIMIT){
+            if(uploadedFile.getSize() >= BYTE_LIMIT){
             	return ResponseEntity.badRequest().build();
             }
             return ResponseEntity.ok().body("/image/" + uploadedFile.getId());
