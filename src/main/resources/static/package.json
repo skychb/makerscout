@@ -19,9 +19,12 @@
   "homepage": "https://github.com/skychb/react.learning#readme",
   "dependencies": {
     "bulma": "^0.4.0",
-    "handlebars": "^4.0.6",
+    "handlebars": "^4.0.5",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "requirejs": "^2.3.3",
+    "sockjs": "^0.3.18",
+    "stomp": "^0.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.7.0",

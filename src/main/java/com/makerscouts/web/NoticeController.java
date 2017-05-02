@@ -10,15 +10,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.makerscouts.domain.post.Post;
-import com.makerscouts.domain.post.PostRepository;
+import com.makerscouts.domain.post.Notice;
+import com.makerscouts.domain.post.NoticeRepository;
 
 @Controller
-@RequestMapping(value="/post")
-public class PostController implements Serializable{
-
+@RequestMapping("/notice")
+public class NoticeController implements Serializable{
 	@Autowired
-	private PostRepository postRepository;
+	private NoticeRepository noticeRepository;
 	
 	@RequestMapping("")
 	public String loadPostPage(){
@@ -34,15 +33,15 @@ public class PostController implements Serializable{
 	
 	@RequestMapping(value="/{id}")
 	public String getPost(Model model, @PathVariable long id){
-		Post post = postRepository.findOne(id);
-		model.addAttribute("post", post);
+		Notice notice = noticeRepository.findByPid(id);
+		model.addAttribute("notice", notice);
 		return "show";
 	}
 	
 	@RequestMapping(value="", method=RequestMethod.POST)
-	public String setPost(Post post){
-		post.setTimestamp(new Date());
-		System.out.println(post);
-		return "redirect:/post/"+postRepository.save(post).getPid();
+	public String setPost(Notice notice){
+		notice.setTimestamp(new Date());
+		System.out.println(notice);
+		return "redirect:/notice/"+noticeRepository.save(notice).getPid();
 	}	
 }

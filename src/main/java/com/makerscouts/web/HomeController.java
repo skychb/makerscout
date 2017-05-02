@@ -27,6 +27,11 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping(value="/team", method=RequestMethod.GET)
+	public String showTeamPage(){
+		return "tile";
+	}
+	
 	@RequestMapping(value="/user/")
 	public String view(Model model){
 		List<User> userList = userRepository.findAll();

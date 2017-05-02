@@ -18,6 +18,9 @@
 <link rel="stylesheet" type="text/css"
 	href="../node_modules/bulma/css/bulma.css">
 <link rel="stylesheet" type="text/css" href="../landing.css">
+	<script	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+	<script type="text/javascript" src="../js/lobby.js"></script>
+
 </head>
 <body>
 	<section class="hero">
@@ -33,11 +36,8 @@
 					<span class="nav-toggle"> <span></span> <span></span> <span></span>
 					</span>
 					<div class="nav-right nav-menu">
-						<a class="nav-item is-tab is-hidden-tablet is-active">Home</a> <a
-							class="nav-item is-tab is-hidden-tablet">Features</a> <a
-							class="nav-item is-tab is-hidden-tablet">Pricing</a> <a
-							class="nav-item is-tab is-hidden-tablet">About</a> <a
-							class="nav-item is-tab" th:utext="|${session.user.name}님 환영합니다!|" >
+						 <div class="idForChat" th:text="${session.user.name}" style="display:none;"></div>
+						 <a	class="nav-item is-tab" th:utext="|${session.user.name}님 환영합니다!|" >
 							<figure class="image is-16x16" style="margin-right: 8px;">
 								<img src="http://bulma.io/images/jgthms.png">
 							</figure> ${session.user.name}님 환영합니다. 
@@ -57,7 +57,7 @@
 				</h1>
 				<progress class="progress" value="15" max="100">15%</progress>
 
-				<h2 class="subtitle">90Days To go.</h2>
+				<h2 class="subtitle">90 Days To go.</h2>
 			</div>
 
 
@@ -147,109 +147,14 @@
                         </h2>-->
 					</div>
 					<div class="box scrollable"
-						style="height: 380px; overflow-y: scroll">
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>변치호</strong> <small>에라 모르겠다</small> <small>31m</small>
-										<br> 핵 졸리네여 꺄르륵
-									</p>
-								</div>
-
-							</div>
-						</article>
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>변치호</strong> <small>호호호</small> <small>31m</small> <br>
-										그럼 영원히 퇴근하세여
-									</p>
-								</div>
-
-							</div>
-						</article>
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>변치호</strong> <small>히히히</small> <small>31m</small> <br>
-										디질래여?
-									</p>
-								</div>
-							</div>
-						</article>
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>변치호</strong> <small>히히히</small> <small>31m</small> <br>
-										디질래여?
-									</p>
-								</div>
-							</div>
-						</article>
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>변치호</strong> <small>히히히</small> <small>31m</small> <br>
-										디질래여?
-									</p>
-								</div>
-							</div>
-						</article>
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>변치호</strong> <small>히히히</small> <small>31m</small> <br>
-										디질래여?
-									</p>
-								</div>
-							</div>
-						</article>
+						style="height: 380px; overflow-y: scroll" id="chat-box">
+											
+						
 					</div>
 					<div class="field">
 						<p class="control">
-							<input class="input" type="text" placeholder="대화하세요">
+							<input class="input" id="chat-input" type="text" placeholder="대화하세요">
+							<button type="button" onclick="send();">send</button>
 						</p>
 					</div>
 				</div>
@@ -411,9 +316,27 @@
 			</div>
 		</div>
 	</footer>
-	<script
-		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-	<script type="text/javascript" src="../js/lobby.js"></script>
+	<script id="chat-template" type="text/x-handlebars-template">
+		<article class="media">
+			<div class="media-left">
+				<figure class="image is-64x64">
+					<img src="http://bulma.io/images/placeholders/128x128.png"
+						alt="Image">
+				</figure>
+			</div>
+			<div class="media-content">
+				<div class="content">
+					<p>
+						<strong>{{ㅜname}}</strong> <small>{{time}}</small> <br>
+						{{contents}}
+					</p>
+				</div>
+			</div>
+		</article>
+	</script>
+	<script type="text/javascript" src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script type="text/javascript" src="../src/sockjs.js"></script>
+	<script type="text/javascript" src="../src/stomp.js"></script>
 	<script async type="text/javascript" src="../src/bulma.js"></script>
 </body>
 </html>

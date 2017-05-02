@@ -10,18 +10,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.makerscouts.domain.post.Post;
-import com.makerscouts.domain.post.PostRepository;
+import com.makerscouts.domain.post.Share;
+import com.makerscouts.domain.post.ShareRepository;
 
 @Controller
-@RequestMapping(value="/post")
-public class PostController implements Serializable{
-
+@RequestMapping("/share")
+public class ShareController implements Serializable{
 	@Autowired
-	private PostRepository postRepository;
+	private ShareRepository shareRepository;
 	
 	@RequestMapping("")
-	public String loadPostPage(){
+	public String loadPage(){
 		return "upload";
 	}
 	
@@ -33,16 +32,16 @@ public class PostController implements Serializable{
 //	};
 	
 	@RequestMapping(value="/{id}")
-	public String getPost(Model model, @PathVariable long id){
-		Post post = postRepository.findOne(id);
-		model.addAttribute("post", post);
+	public String getShare(Model model, @PathVariable long id){
+		Share share = shareRepository.findByPid(id);
+		model.addAttribute("share", share);
 		return "show";
 	}
 	
 	@RequestMapping(value="", method=RequestMethod.POST)
-	public String setPost(Post post){
-		post.setTimestamp(new Date());
-		System.out.println(post);
-		return "redirect:/post/"+postRepository.save(post).getPid();
+	public String setShare(Share share){
+		share.setTimestamp(new Date());
+		System.out.println(share);
+		return "redirect:/share/"+shareRepository.save(share).getPid();
 	}	
 }
