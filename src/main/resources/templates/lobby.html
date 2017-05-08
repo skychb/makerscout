@@ -18,8 +18,7 @@
 <link rel="stylesheet" type="text/css"
 	href="../node_modules/bulma/css/bulma.css">
 <link rel="stylesheet" type="text/css" href="../landing.css">
-	<script	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-	<script type="text/javascript" src="../js/lobby.js"></script>
+	
 
 </head>
 <body>
@@ -106,35 +105,11 @@
                         짝짝짝! 박수!
                         </h2>-->
 					</div>
-					<div class="scrollable" style="height: 400px; overflow-y: scroll;">
-						<div class="notification is-primary">
-							<button class="delete"></button>
-							호우호우! 즐거운 수요일!
-						</div>
+					<div class="scrollable" if = "newsfeed" style="height: 400px; overflow-y: scroll;">
 						<div class="notification is-primary">
 							<button class="delete"></button>
 							<b>송철환</b>님이 아재개그를 시전하였습니다. <br> <small>07/17 11:45</small>
-						</div>
-						<div class="notification is-primary">
-							<button class="delete"></button>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem
-							ipsum dolor sit amet, consectetur adipiscing elit
-						</div>
-						<div class="notification is-primary">
-							<button class="delete"></button>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem
-							ipsum dolor sit amet, consectetur adipiscing elit
-						</div>
-						<div class="notification is-primary">
-							<button class="delete"></button>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem
-							ipsum dolor sit amet, consectetur adipiscing elit
-						</div>
-						<div class="notification is-primary">
-							<button class="delete"></button>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem
-							ipsum dolor sit amet, consectetur adipiscing elit
-						</div>
+						</div>	
 					</div>
 				</div>
 				<div class="column">
@@ -153,8 +128,8 @@
 					</div>
 					<div class="field">
 						<p class="control">
-							<input class="input" id="chat-input" type="text" placeholder="대화하세요">
-							<button type="button" onclick="send();">send</button>
+							<input class="input" id="chat-input" type="text" placeholder="대화하세요" onkeydown="keyForSend()">
+							<!--<button type="button" onclick="send();">send</button>-->
 						</p>
 					</div>
 				</div>
@@ -215,91 +190,7 @@
 							href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
 							title="2016–17 UEFA Champions League">07-17</a></td>
 					</tr>
-					<tr>
-						<th>3</th>
-						<td><a
-							href="https://en.wikipedia.org/wiki/Tottenham_Hotspur_F.C."
-							title="Tottenham Hotspur F.C.">Tottenham Hotspur</a></td>
-						<td>운영팀</td>
-						<td><a
-							href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-							title="2016–17 UEFA Champions League">07-17</a></td>
-					</tr>
-					<tr class="is-selected">
-						<th>4</th>
-						<td><a
-							href="https://en.wikipedia.org/wiki/Manchester_City_F.C."
-							title="Manchester City F.C.">Manchester City</a></td>
-						<td>운영팀</td>
-						<td><a
-							href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Play-off_round"
-							title="2016–17 UEFA Champions League">07-17</a></td>
-					</tr>
-					<tr>
-						<th>5</th>
-						<td><a
-							href="https://en.wikipedia.org/wiki/Manchester_United_F.C."
-							title="Manchester United F.C.">Manchester United</a></td>
-						<td>운영팀</td>
-						<td><a
-							href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage"
-							title="2016–17 UEFA Europa League">07-17</a></td>
-					</tr>
-					<tr>
-						<th>6</th>
-						<td><a href="https://en.wikipedia.org/wiki/Southampton_F.C."
-							title="Southampton F.C.">Southampton</a></td>
-						<td>운영팀</td>
-						<td><a
-							href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage"
-							title="2016–17 UEFA Europa League">07-17</a></td>
-					</tr>
-					<tr>
-						<th>7</th>
-						<td><a
-							href="https://en.wikipedia.org/wiki/West_Ham_United_F.C."
-							title="West Ham United F.C.">West Ham United</a></td>
-						<td>운영팀</td>
-						<td><a
-							href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Third_qualifying_round"
-							title="2016–17 UEFA Europa League"> </a></td>
-					</tr>
-					<tr>
-						<th>8</th>
-						<td><a href="https://en.wikipedia.org/wiki/Liverpool_F.C."
-							title="Liverpool F.C.">Liverpool</a></td>
-						<td>운영팀</td>
-						<td></td>
-					</tr>
-					<tr>
-						<th>9</th>
-						<td><a href="https://en.wikipedia.org/wiki/Stoke_City_F.C."
-							title="Stoke City F.C.">Stoke City</a></td>
-						<td>운영팀</td>
-						<td></td>
-					</tr>
-					<tr>
-						<th>10</th>
-						<td><a href="https://en.wikipedia.org/wiki/Chelsea_F.C."
-							title="Chelsea F.C.">Chelsea</a></td>
-						<td>운영팀</td>
-						<td></td>
-					</tr>
-					<tr>
-						<th>11</th>
-						<td><a href="https://en.wikipedia.org/wiki/Everton_F.C."
-							title="Everton F.C.">Everton</a></td>
-						<td>운영팀</td>
-						<td></td>
-					</tr>
-					<tr>
-						<th>12</th>
-						<td><a
-							href="https://en.wikipedia.org/wiki/Swansea_City_A.F.C."
-							title="Swansea City A.F.C.">Swansea City</a></td>
-						<td>운영팀</td>
-						<td>12</td>
-					</tr>
+					
 				</tbody>
 			</table>
 			<div class="block has-text-right">
@@ -334,6 +225,22 @@
 			</div>
 		</article>
 	</script>
+
+	<script id="news-template-login" type="text/x-handlebars-template">
+		<div class="notification is-primary">
+			<button class="delete"></button>
+			<b>{{id}}</b>님이 로그인하셨습니다. <br> <small>{{date}}</small>
+		</div>	
+	</script>
+
+	<script id="news-template-post" type="text/x-handlebars-template">
+		<div class="notification is-primary">
+			<button class="delete"></button>
+			<b>{{id}}</b>님이 {{title}}을 올리셨습니다. <br> <small>{{date}}</small>
+		</div>
+	</script>
+	<script	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+	<script type="text/javascript" src="../js/lobby.js"></script>
 	<script type="text/javascript" src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 	<script type="text/javascript" src="../src/sockjs.js"></script>
 	<script type="text/javascript" src="../src/stomp.js"></script>

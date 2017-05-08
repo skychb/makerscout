@@ -20,7 +20,8 @@ public class NoticeController implements Serializable{
 	private NoticeRepository noticeRepository;
 	
 	@RequestMapping("")
-	public String loadPostPage(){
+	public String loadPostPage(Model model){
+		model.addAttribute("type", "notice");
 		return "upload";
 	}
 	
@@ -34,7 +35,7 @@ public class NoticeController implements Serializable{
 	@RequestMapping(value="/{id}")
 	public String getPost(Model model, @PathVariable long id){
 		Notice notice = noticeRepository.findByPid(id);
-		model.addAttribute("notice", notice);
+		model.addAttribute("post", notice);
 		return "show";
 	}
 	

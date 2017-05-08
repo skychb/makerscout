@@ -3,9 +3,14 @@ package com.makerscouts.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.makerscouts.domain.post.News;
+import com.makerscouts.domain.post.NewsRepository;
 import com.makerscouts.domain.post.Notice;
 import com.makerscouts.domain.post.NoticeRepository;
 import com.makerscouts.domain.post.Post;
@@ -23,6 +28,9 @@ public class PostApiController {
 	
 	@Autowired
 	private ShareRepository shareRepository;
+	
+	@Autowired
+	private NewsRepository newsRepository;
 	
 	@GetMapping("/post/list")
 	public List<Post> listPost(){
@@ -42,16 +50,11 @@ public class PostApiController {
 		return shares;
 	}
 	
-	
-//	@RequestMapping(value="/post/add", method=RequestMethod.POST)
-//	public Post addPost(String author, String contents, String title){
-//		Post newPost = new Post(title, author, contents);
-//		postRepository.save(newPost);
-//		return newPost;
-//	}
-//
-//	@RequestMapping(value="/post", method=RequestMethod.GET)
-//	public @ResponseBody Iterable<Post> list(){
-//		return postRepository.findAll();
-//	}
+	@GetMapping("/news/list")
+	public List<News> listNews(){
+//		Pageable pageableTop = new PageRequest(0,10, Direction.ASC, "date");
+//		List<News> news = newsRepository.findTopOrderByDate(pageableTop);
+		List<News> news = newsRepository.findAll();
+		return news;
+	}
 }

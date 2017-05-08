@@ -64,7 +64,7 @@
 			<div class="container">
 				<div class="heading has-text-centered">
 					<div class="title">Uploading your post.</div>
-					<form id="postForm" method="post" action="/post">
+					<form id="postForm" method="post" action="/" th:attrappend="action=${type}">
 						<input class="input is-large" type="text" placeholder="포스트 제목" id="title"
 							name="title"> <input class="input is-medium" type="text"
 							placeholder="author" id="author" name="author" value="chiho">

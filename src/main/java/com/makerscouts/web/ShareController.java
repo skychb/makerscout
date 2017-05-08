@@ -20,7 +20,8 @@ public class ShareController implements Serializable{
 	private ShareRepository shareRepository;
 	
 	@RequestMapping("")
-	public String loadPage(){
+	public String loadPage(Model model){
+		model.addAttribute("type", "share");
 		return "upload";
 	}
 	
@@ -34,7 +35,7 @@ public class ShareController implements Serializable{
 	@RequestMapping(value="/{id}")
 	public String getShare(Model model, @PathVariable long id){
 		Share share = shareRepository.findByPid(id);
-		model.addAttribute("share", share);
+		model.addAttribute("post", share);
 		return "show";
 	}
 	

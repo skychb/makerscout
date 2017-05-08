@@ -35,7 +35,7 @@ $(document).ready(function() {
   });
  
   var template = $('#post-template').html();
- var template_up = Handlebars.compile(template);
+  var template_up = Handlebars.compile(template);
 
 	jQuery.fn.extend({
         toggleText: function (a, b){

@@ -1,7 +1,11 @@
 package com.makerscouts.web;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.makerscouts.domain.post.News;
+import com.makerscouts.domain.post.NewsRepository;
 import com.makerscouts.domain.post.Post;
 import com.makerscouts.domain.post.PostRepository;
 
@@ -20,8 +26,12 @@ public class PostController implements Serializable{
 	@Autowired
 	private PostRepository postRepository;
 	
+	@Autowired
+	private NewsRepository newsRepository;
+	
 	@RequestMapping("")
-	public String loadPostPage(){
+	public String loadPostPage(Model model){
+		model.addAttribute("type", "post");
 		return "upload";
 	}
 	
@@ -40,9 +50,11 @@ public class PostController implements Serializable{
 	}
 	
 	@RequestMapping(value="", method=RequestMethod.POST)
-	public String setPost(Post post){
+	public String setPost(Post post, HttpSession session){
 		post.setTimestamp(new Date());
-		System.out.println(post);
+		String name = session.getAttribute("user").getClass().getName();
+		News news = new News(name, new Date(), post.getTitle());
+		newsRepository.save(news);
 		return "redirect:/post/"+postRepository.save(post).getPid();
 	}	
 }

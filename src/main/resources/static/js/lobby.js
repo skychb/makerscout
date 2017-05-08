@@ -9,14 +9,27 @@ var stompClient = null;
  * class="content"> <p> <strong>{{name}}</strong> <small>{{time}}</small> <br>
  * {{contents}} </p> </div> </div> </article>
  */
+var template_login = $('#news-template-login');
+var template_post = $('#news-template-post');
+var template_login_up = Handlebars.compile(template_login);
+var template_post_up = Handlebars.compile(template_post);
+function keyForSend(){
+	if(event.keyCode == 13){
+		send();
+		$('#chat-input').val('');
+	}
+}
 
 function connect() {
 	var socket = new SockJS('/hello');
 	stompClient = Stomp.over(socket);
 	stompClient.connect({}, function(frame) {
+		var message = "Be careful little hands what you do";
+		showGreeting(message);
 		console.log('connected : ' + frame);
 		stompClient.subscribe('/topic/greetings', function(greeting) {
-			showGreeting(JSON.parse(greeting.body).content);
+			var now = new Date();
+			showGreeting(JSON.parse(greeting.body).content+now.getHours()+":"+now.getMinutes());
 			console.log('checked for show greeting.');
 		});
 	});
@@ -34,7 +47,7 @@ function send() {
 }
 
 function showGreeting(message) {
-	$('<li></li>').append(message).prependTo('#chat-box');
+	$('<li></li>').append(message).appendTo('#chat-box');
 	console.log("showGreeting");
 }
 

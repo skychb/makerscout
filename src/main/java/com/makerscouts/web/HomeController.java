@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -43,6 +44,11 @@ public class HomeController {
 	public String lobbyView(Model model){
 		List<Post> postList = postRepostory.findAll();
 		return "lobby";
+	}
+	
+	@GetMapping(value="/admin/lobby")
+	public String adminLobby(){
+		return "lobby_admin";
 	}
 	
 }

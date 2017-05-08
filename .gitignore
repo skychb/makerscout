@@ -5,6 +5,8 @@ src/main/resources/static/node_modules/
 src/main/resources/static/fonts
 src/main/resources/application.properties
 d:/
+/.DS_Store
+/src/.DS_Store
 /d:/
 ### STS ###
 .apt_generated

@@ -35,7 +35,7 @@
 						</span>
 						<div class="nav-right nav-menu">
 							<a class="nav-item" href="http://makerscouts.co.kr"> About </a> <span class="nav-item"> <a
-								class="button is-default" href="/login/form" th:unless="${session.user}"> 멤버 로그인 </a>
+								class="button is-default" href="/login" th:unless="${session.user}"> 멤버 로그인 </a>
 							</span>
 							<a class="nav-item" th:if="${session.user}" th:text="|${session.user.name}|">chiho</a>
 							<a class="nav-item" href="/lobby" th:if="${session.user}">LOBBY</a>

@@ -17,4 +17,6 @@ public class Team implements Serializable {
 	@GeneratedValue
 	private long id;
 	
+	 
+	
 }
