@@ -15,9 +15,6 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
-configure {
-	webAppDirName = 'makerscouts'
-}
 
 dependencies {
     providedCompile 'org.apache.tomcat:tomcat-catalina:8.0.43'
