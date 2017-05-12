@@ -9,23 +9,30 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
 }
+version = '0.7'
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
+apply plugin: 'application'
 
 jar {
-	baseName = 'makerscout'
-	version = '1.0'
+    manifest {
+        attributes  'Title': 'My Application', 'Version': version, 'Main-Class': 'com.makerscouts.MakerscoutsApplication'
+    }
+    archiveName 'makerscouts.jar'
+    dependsOn configurations.runtime
+    from {
+        configurations.compile.collect {it.isDirectory()? it: zipTree(it)}
+    }
 }
 
 dependencies {
     providedCompile 'org.apache.tomcat:tomcat-catalina:8.0.43'
 }
 
-version = '0.7'
-sourceCompatibility = 1.8
+
 
 repositories {
 	mavenCentral()
