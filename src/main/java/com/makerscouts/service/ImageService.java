@@ -37,9 +37,13 @@ public class ImageService {
     @Autowired
     FileRepository fileRepository;
     
-    public Stream<Object> loadAll() {
+    public List<Integer> loadAll() {
         List<UploadFile> files = fileRepository.findAll();
-        return files.stream().map(file -> file.getId());
+        List<Integer> ids = null;
+        for(int i = 0; i<files.size(); i++){
+        	ids.add(files.get(i).getId());
+        }
+        return ids;
     }
     
     public UploadFile load(int fileId) {

@@ -64,7 +64,7 @@ public class Thymeleaf3AutoConfiguration {
     }
 
     @Autowired(required = false)
-    private final Collection<IDialect> dialects = Collections.singletonList(new SpringSecurityDialect());
+    private final Collection<SpringSecurityDialect> dialects = Collections.singletonList(new SpringSecurityDialect());
   //얘가 #authentication.name을 받아오
     
     @Autowired

@@ -1,6 +1,7 @@
 buildscript {
 	ext {
 		springBootVersion = '1.5.2.RELEASE'
+		javaVersion = '1.7'
 	}
 	repositories {
 		mavenCentral()
@@ -17,22 +18,12 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 apply plugin: 'application'
 
-jar {
-    manifest {
-        attributes  'Title': 'My Application', 'Version': version, 'Main-Class': 'com.makerscouts.MakerscoutsApplication'
-    }
-    archiveName 'makerscouts.jar'
-    dependsOn configurations.runtime
-    from {
-        configurations.compile.collect {it.isDirectory()? it: zipTree(it)}
-    }
-}
-
 dependencies {
     providedCompile 'org.apache.tomcat:tomcat-catalina:8.0.43'
 }
 
-
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
 
 repositories {
 	mavenCentral()
