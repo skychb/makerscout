@@ -27,7 +27,7 @@
 			<nav class="nav has-shadow">
 				<div class="container">
 					<div class="nav-left">
-						<a class="nav-item"> <img
+						<a href="/" class="nav-item"> <img
 							src="http://haeyumsi.cdn3.cafe24.com/makerscouts_logo_or.png"
 							alt="Description">
 						</a> <a class="nav-item is-tab is-hidden-mobile disable">LOBBY</a>
@@ -105,11 +105,8 @@
                         짝짝짝! 박수!
                         </h2>-->
 					</div>
-					<div class="scrollable" if = "newsfeed" style="height: 400px; overflow-y: scroll;">
-						<div class="notification is-primary">
-							<button class="delete"></button>
-							<b>송철환</b>님이 아재개그를 시전하였습니다. <br> <small>07/17 11:45</small>
-						</div>	
+					<div class="scrollable" id = "newsfeed" style="height: 400px; overflow-y: scroll;">
+						
 					</div>
 				</div>
 				<div class="column">
@@ -240,8 +237,8 @@
 		</div>
 	</script>
 	<script	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-	<script type="text/javascript" src="../js/lobby.js"></script>
 	<script type="text/javascript" src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script type="text/javascript" src="../js/lobby.js"></script>
 	<script type="text/javascript" src="../src/sockjs.js"></script>
 	<script type="text/javascript" src="../src/stomp.js"></script>
 	<script async type="text/javascript" src="../src/bulma.js"></script>

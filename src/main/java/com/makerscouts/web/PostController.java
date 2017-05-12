@@ -1,13 +1,13 @@
 package com.makerscouts.web;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -52,8 +52,7 @@ public class PostController implements Serializable{
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public String setPost(Post post, HttpSession session){
 		post.setTimestamp(new Date());
-		String name = session.getAttribute("user").getClass().getName();
-		News news = new News(name, new Date(), post.getTitle());
+		News news = new News(post.getAuthor(), new Date(), post.getTitle());
 		newsRepository.save(news);
 		return "redirect:/post/"+postRepository.save(post).getPid();
 	}	

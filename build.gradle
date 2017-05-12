@@ -1,6 +1,7 @@
 buildscript {
 	ext {
 		springBootVersion = '1.5.2.RELEASE'
+		javaVersion = 1.8
 	}
 	repositories {
 		mavenCentral()
@@ -15,16 +16,13 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
-configure {
-	webAppDirName = 'makerscouts'
-}
-
 dependencies {
     providedCompile 'org.apache.tomcat:tomcat-catalina:8.0.43'
 }
 
 version = '0.8'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
@@ -35,6 +33,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.thymeleaf:thymeleaf:3.0.0.RELEASE')
 	compile('org.thymeleaf:thymeleaf-spring4:3.0.0.RELEASE')
 	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.0.RELEASE')
