@@ -1,7 +1,6 @@
 buildscript {
 	ext {
 		springBootVersion = '1.5.2.RELEASE'
-		javaVersion = 1.8
 	}
 	repositories {
 		mavenCentral()
@@ -13,25 +12,30 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
-mainClassName = "com.makerscouts.MakerscoutsApplication"
+jar {
+	baseName = 'makerscout'
+	version = '1.0'
+}
 
+dependencies {
+    providedCompile 'org.apache.tomcat:tomcat-catalina:8.0.43'
+}
 
+version = '0.7'
 sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.thymeleaf:thymeleaf:3.0.0.RELEASE')
 	compile('org.thymeleaf:thymeleaf-spring4:3.0.0.RELEASE')
 	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.0.RELEASE')
@@ -45,5 +49,5 @@ dependencies {
 	compile("com.navercorp.lucy:lucy-xss:1.6.3")
 	compile("com.navercorp.lucy:lucy-xss-servlet:2.0.0")
 	compile("org.imgscalr:imgscalr-lib:4.2")
-	
+
 }
