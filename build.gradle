@@ -13,14 +13,12 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
+apply plugin: 'spring-boot'
 apply plugin: 'war'
 
-dependencies {
-    providedCompile 'org.apache.tomcat:tomcat-catalina:8.0.43'
-}
+mainClassName = "com.makerscouts.MakerscoutsApplication"
 
-version = '0.8'
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
