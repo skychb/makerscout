@@ -9,6 +9,7 @@
 
 body{
   font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.2px;
 }
 nav ul a,
 nav .brand-logo {
@@ -129,4 +130,20 @@ div > div > div > ul > li{
   line-height: 25px;
   margin-top:30px;
   margin-bottom:auto;
+}
+
+.intro{
+	margin-top:10%;
+}
+
+.nav-wrapper{
+	top:10px;
+}
+
+.white{
+	height:80px;
+}
+
+.exp{
+	margin-left:11%;
 }
