@@ -28,6 +28,11 @@ public class HomeController {
 		return "promotion";
 	}
 	
+	@RequestMapping(value="/register", method=RequestMethod.GET)
+	public String register(){
+		return "register";
+	}
+	
 	@GetMapping(value="/home")
 	public String realHome(){
 		return "index";
