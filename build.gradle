@@ -5,7 +5,6 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
-		jcenter()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -32,10 +31,7 @@ repositories {
 	mavenCentral()
 }
 
-shadowJar{
-	zip64 = true
-	zip64	true
-}
+
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter'){
