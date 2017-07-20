@@ -21,7 +21,7 @@ $(document).ready(
 					console.log(data);
 					for (var i = 0; i < data.length; i++) {
 						var frame = "<tr><th>" + data[i].pid
-								+ "</th><td><a href=\"/notice/" + data[i].pid
+								+ "</th><td><a href=\"/post/" + data[i].pid
 								+ "\">" + data[i].title + "</a></td><td>"
 								+ data[i].author + "</td><td>" + dateConvert(data[i].timestamp)
 								+ "</td></tr>";
