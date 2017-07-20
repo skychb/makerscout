@@ -5,10 +5,16 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.makerscouts.domain.user.Team;
 
 import lombok.Data;
 
@@ -34,6 +40,14 @@ public class Post implements Serializable{
 	
 	@Column(nullable = false, length=100000000)
 	private String contents;
+	
+	@ManyToOne
+	@JoinColumn(foreignKey=@ForeignKey(name="team_id"))
+	private Team team;
+	
+	@Column(name="team_id", insertable = false, updatable = false)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	private int teamId;
 	
 	private Post(){};
 	

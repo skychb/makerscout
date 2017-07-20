@@ -33,6 +33,9 @@ public class Team implements Serializable{
 	@Column
 	private Date created;
 	
+	@Column
+	private String member;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy="team", fetch=FetchType.LAZY)
 	private List<User> user;

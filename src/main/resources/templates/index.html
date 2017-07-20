@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="../landing.css">
 </head>
 <body>
-	<section class="hero is-dark" style="height: 550px;">
+	<section class="hero is-dark" style="height: 350px;">
 		<div class="hero-head">
 			<div class="container">
 				<nav class="nav">
@@ -39,6 +39,7 @@
 							</span>
 							<a class="nav-item" th:if="${session.user}" th:text="|${session.user.name}|">chiho</a>
 							<a class="nav-item" href="/lobby" th:if="${session.user}">LOBBY</a>
+							<a class="nav-item" href="/logout" th:if="${session.user}">LOGOUT</a>
 						</div>
 					</div>
 				</nav>
@@ -49,10 +50,10 @@
 			<div class="container has-text-centered">
 				<div class="columns is-vcentered">
 					<div class="column">
-						<h1 class="title">Now, Your project has begun.</h1>
-						<h2 class="subtitle">It's time to say hello to makers.</h2>
-						<br> <a class="button is-large is-danger is-outlined ">
-							Check the Seminar </a>
+						<h1 class="title">메이커스카우트 2017 네트워크</h1>
+						<h2 class="subtitle">청소년 소셜 메이커 프로젝트</h2>
+						<br> <!-- <a class="button is-large is-danger is-outlined ">
+							 </a> -->
 					</div>
 				</div>
 			</div>
@@ -72,25 +73,25 @@
 				<div class="level-item has-text-centered">
 					<div>
 						<p class="heading">Like</p>
-						<p class="title numbering" data-count="3456">0</p>
+						<p class="title numbering" data-count="1212">0</p>
 					</div>
 				</div>
 				<div class="level-item has-text-centered">
 					<div>
 						<p class="heading">Posts</p>
-						<p class="title numbering" data-count="123">0</p>
+						<p class="title numbering" data-count="0">0</p>
 					</div>
 				</div>
 				<div class="level-item has-text-centered">
 					<div>
 						<p class="heading">Clicks for MS</p>
-						<p class="title numbering" data-count="45600">0</p>
+						<p class="title numbering" data-count="0">0</p>
 					</div>
 				</div>
 				<div class="level-item has-text-centered">
 					<div>
-						<p class="heading">Share</p>
-						<p class="title numbering" data-count="789">0</p>
+						<p class="heading">Participants</p>
+						<p class="title numbering" data-count="77">0</p>
 					</div>
 				</div>
 			</nav>
@@ -100,9 +101,9 @@
 	<section class="section">
 		<div class="container">
 			<div class="heading has-text-centered">
-				<h1 class="title">이번 프로젝트 15개팀을 소개합니다.</h1>
+				<h1 class="title">메이커스카우트 2017 15개팀을 소개합니다.</h1>
 				<h2 class="subtitle">
-					<br>짝짝짝! 박수!
+					<br> 서울 / 경기 / 대전 지역에서 선발된 메이커스카우트 멤버입니다. 
 				</h2>
 			</div>
 
@@ -119,7 +120,7 @@
 							<div class="media-content">
 								<div class="content">
 									<p>
-										<strong>John Smith</strong> <br> 핵노답
+										<strong>MS</strong> <br> 서울로봇고
 									</p>
 								</div>
 							</div>
@@ -138,7 +139,7 @@
 							<div class="media-content">
 								<div class="content">
 									<p>
-										<strong>John Smith</strong> <br> 핵노답
+										<strong>4B</strong> <br> 서울국제고 / 동북고
 									</p>
 								</div>
 							</div>
@@ -157,126 +158,7 @@
 							<div class="media-content">
 								<div class="content">
 									<p>
-										<strong>John Smith</strong> <br> 핵노답
-									</p>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-			</div>
-
-			<div class="columns hiding">
-				<div class="column is-4">
-					<div class="box">
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>John Smith</strong> <br> 핵노답
-									</p>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-				<div class="column is-4">
-					<div class="box">
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>John Smith</strong> <br> 핵노답
-									</p>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-				<div class="column is-4">
-					<div class="box">
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>John Smith</strong> <br> 핵노답
-									</p>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-			</div>
-			<div class="columns hiding">
-				<div class="column is-4">
-					<div class="box">
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>John Smith</strong> <br> 핵노답
-									</p>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-				<div class="column is-4">
-					<div class="box">
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>John Smith</strong> <br> 핵노답
-									</p>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-				<div class="column is-4">
-					<div class="box">
-						<article class="media">
-							<div class="media-left">
-								<figure class="image is-64x64">
-									<img src="http://bulma.io/images/placeholders/128x128.png"
-										alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<div class="content">
-									<p>
-										<strong>John Smith</strong> <br> 핵노답
+										<strong>겜잘알</strong> <br> 석호중
 									</p>
 								</div>
 							</div>
@@ -298,7 +180,7 @@
 							<div class="media-content">
 								<div class="content">
 									<p>
-										<strong>John Smith</strong> <br> 핵노답
+										<strong>슬러시</strong> <br> 예봉중
 									</p>
 								</div>
 							</div>
@@ -317,7 +199,7 @@
 							<div class="media-content">
 								<div class="content">
 									<p>
-										<strong>John Smith</strong> <br> 핵노답
+										<strong>공감요정들</strong> <br> 경기모바일과학고
 									</p>
 								</div>
 							</div>
@@ -336,7 +218,66 @@
 							<div class="media-content">
 								<div class="content">
 									<p>
-										<strong>John Smith</strong> <br> 핵노답
+										<strong>YUM</strong> <br>이천양정여고
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+			<div class="columns hiding">
+				<div class="column is-4">
+					<div class="box">
+						<article class="media">
+							<div class="media-left">
+								<figure class="image is-64x64">
+									<img src="http://bulma.io/images/placeholders/128x128.png"
+										alt="Image">
+								</figure>
+							</div>
+							<div class="media-content">
+								<div class="content">
+									<p>
+										<strong>정조, 암흑에 서다</strong> <br>수성고
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+				<div class="column is-4">
+					<div class="box">
+						<article class="media">
+							<div class="media-left">
+								<figure class="image is-64x64">
+									<img src="http://bulma.io/images/placeholders/128x128.png"
+										alt="Image">
+								</figure>
+							</div>
+							<div class="media-content">
+								<div class="content">
+									<p>
+										<strong>VISION</strong> <br> 고양외고
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+				<div class="column is-4">
+					<div class="box">
+						<article class="media">
+							<div class="media-left">
+								<figure class="image is-64x64">
+									<img src="http://bulma.io/images/placeholders/128x128.png"
+										alt="Image">
+								</figure>
+							</div>
+							<div class="media-content">
+								<div class="content">
+									<p>
+										<strong>Hagi's Brain</strong> <br> 대전하기중
 									</p>
 								</div>
 							</div>
@@ -358,7 +299,7 @@
 							<div class="media-content">
 								<div class="content">
 									<p>
-										<strong>John Smith</strong> <br> 핵노답
+										<strong>젤라토레</strong> <br> 유성여고
 									</p>
 								</div>
 							</div>
@@ -377,7 +318,7 @@
 							<div class="media-content">
 								<div class="content">
 									<p>
-										<strong>John Smith</strong> <br> 핵노답
+										<strong>보니따</strong> <br> 서울국제고
 									</p>
 								</div>
 							</div>
@@ -396,7 +337,67 @@
 							<div class="media-content">
 								<div class="content">
 									<p>
-										<strong>John Smith</strong> <br> 핵노답
+										<strong>베이커스</strong> <br> 불곡고
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+
+			<div class="columns hiding">
+				<div class="column is-4">
+					<div class="box">
+						<article class="media">
+							<div class="media-left">
+								<figure class="image is-64x64">
+									<img src="http://bulma.io/images/placeholders/128x128.png"
+										alt="Image">
+								</figure>
+							</div>
+							<div class="media-content">
+								<div class="content">
+									<p>
+										<strong>UNIT-A-PES</strong> <br> 하남고
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+				<div class="column is-4">
+					<div class="box">
+						<article class="media">
+							<div class="media-left">
+								<figure class="image is-64x64">
+									<img src="http://bulma.io/images/placeholders/128x128.png"
+										alt="Image">
+								</figure>
+							</div>
+							<div class="media-content">
+								<div class="content">
+									<p>
+										<strong>걸크러쉬</strong> <br> 용인홍천고
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+				<div class="column is-4">
+					<div class="box">
+						<article class="media">
+							<div class="media-left">
+								<figure class="image is-64x64">
+									<img src="http://bulma.io/images/placeholders/128x128.png"
+										alt="Image">
+								</figure>
+							</div>
+							<div class="media-content">
+								<div class="content">
+									<p>
+										<strong>쿼터백s</strong> <br> 도장중
 									</p>
 								</div>
 							</div>
@@ -413,9 +414,9 @@
 	<section class="section">
 		<div class="container">
 			<div class="heading">
-				<h1 class="title">메이커의 프로젝트를 실시간으로 만나보세요!</h1>
-				<h2 class="subtitle">여러분의 응원이 핵중요합니다. 응원하세요.</h2>
-			</div>
+				<h1 class="title has-text-centered">메이커의 프로젝트를 실시간으로 만나보세요!</h1><br><br>
+<!-- 				<h2 class="subtitle">여러분의 응원이 핵중요합니다. 응원하세요.</h2>
+ -->			</div>
 
 			<div class="columns" id="postList" style="overflow-x: scroll; -webkit-overflow-scrolling: touch;">
 				

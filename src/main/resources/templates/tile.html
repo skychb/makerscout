@@ -30,6 +30,7 @@
 							src="http://haeyumsi.cdn3.cafe24.com/makerscouts_logo_or.png"
 							alt="Description">
 						</a> <a class="nav-item is-tab is-hidden-mobile disable">TEAM PAGE</a>
+						<p id="team_id" class="nav-item is-tab is-hidden-mobile disable" th:text=${team.id}>TEAM PAGE</p>
 					</div>
 					<span class="nav-toggle"> <span></span> <span></span> <span></span>
 					</span>
@@ -48,17 +49,15 @@
 
 		<div class="tile is-ancestor">
 			<div class="tile is-vertical is-8">
-				<div class="tile">
+				<div class="tile" style="margin-top:30px">
 					<div class="tile is-parent is-vertical">
 						<article class="tile is-child notification is-primary">
-							<p class="title is-4">우리는...</p>
-							<p class="subtitle is-2">
-								에라 모르겠다 <br> 노답고
-							</p>
+							<p class="title is-4">TEAM</p>
+							<p class="subtitle is-1" th:text=${team.teamName}></p>
 						</article>
 						<article class="tile is-child notification is-warning">
-							<p class="title is-4">창단일</p>
-							<p class="subtitle is-1">2017/07/17</p>
+							<p class="title is-4">SCHOOL</p>
+							<p class="subtitle is-1" th:text=${team.school}></p>
 						</article>
 					</div>
 					<div class="tile is-parent">
@@ -74,14 +73,14 @@
 				<div class="tile is-parent">
 					<article class="tile is-child notification is-danger">
 						<p class="title is-4">팀 멤버</p>
-						<p class="subtitle">똥바보1, 똥바보2, 똥바보3, 똥바보4</p>
+						<p class="subtitle" th:text=${team.member}>똥바보1, 똥바보2, 똥바보3, 똥바보4</p>
 						<div class="content">
 							<!-- Content -->
 						</div>
 					</article>
 				</div>
 			</div>
-			<div class="tile is-parent">
+			<div class="tile is-parent" style="margin-top:30px">
 				<article class="tile is-child notification is-success">
 					<div class="content">
 						<p class="title is-4">팀 공지사항</p>
@@ -185,93 +184,13 @@
 						<th><abbr title="Date">Date</abbr></th>
 					</tr>
 				</tfoot>
-				<tbody>
-					<tr>
-						<th>1</th>
-						<td>How do I live? How do I breathe? When you're not here
-							I'll suffocate.</td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr>
-						<th>2</th>
-						<td>메이커톤 최종안내 | 준비물, 일정 안내</td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr>
-						<th>3</th>
-						<td>If I risk it all, could you stop my fall</td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr class="is-selected">
-						<th>4</th>
-						<td>Writing's on the wall</td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr>
-						<th>5</th>
-						<td><a
-							href="https://en.wikipedia.org/wiki/Manchester_United_F.C."
-							title="Manchester United F.C.">Manchester United</a></td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr>
-						<th>6</th>
-						<td><a href="https://en.wikipedia.org/wiki/Southampton_F.C."
-							title="Southampton F.C.">Southampton</a></td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr>
-						<th>7</th>
-						<td><a
-							href="https://en.wikipedia.org/wiki/West_Ham_United_F.C."
-							title="West Ham United F.C.">West Ham United</a></td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr>
-						<th>8</th>
-						<td><a href="https://en.wikipedia.org/wiki/Liverpool_F.C."
-							title="Liverpool F.C.">Liverpool</a></td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr>
-						<th>9</th>
-						<td><a href="https://en.wikipedia.org/wiki/Stoke_City_F.C."
-							title="Stoke City F.C.">Stoke City</a></td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr>
-						<th>10</th>
-						<td><a href="https://en.wikipedia.org/wiki/Chelsea_F.C."
-							title="Chelsea F.C.">Chelsea</a></td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr>
-						<th>11</th>
-						<td><a href="https://en.wikipedia.org/wiki/Everton_F.C."
-							title="Everton F.C.">Everton</a></td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
-					<tr>
-						<th>12</th>
-						<td><a
-							href="https://en.wikipedia.org/wiki/Swansea_City_A.F.C."
-							title="Swansea City A.F.C.">Swansea City</a></td>
-						<td>운영팀</td>
-						<td>07-17</td>
-					</tr>
+				<tbody id="post_table">
+					
 				</tbody>
 			</table>
+			<div class="block has-text-right">
+				<a href="/post" class="button is-medium is-primary is-outlined ">UPLOAD</a>
+			</div>
 		</div>
 	</section>
 
@@ -283,7 +202,8 @@
 			</div>
 		</div>
 	</footer>
-
+	<script	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 	<script async type="text/javascript" src="../src/bulma.js"></script>
+	<script type="text/javascript" src="../js/team.js"></script>
 </body>
 </html>

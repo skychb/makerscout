@@ -3,10 +3,8 @@ package com.makerscouts.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.makerscouts.domain.post.News;
@@ -48,6 +46,12 @@ public class PostApiController {
 	public List<Share> listShare(){
 		List<Share> shares = shareRepository.findAll();
 		return shares;
+	}
+	
+	@GetMapping("/post/list/{team}")
+	public List<Post> listSelectedPost(@PathVariable int team){
+		List<Post> posts = postRepository.findByTeamId(team);
+		return posts;
 	}
 	
 	@GetMapping("/news/list")

@@ -41,9 +41,15 @@ public class UserController {
 	public String login(@RequestParam String id, @RequestParam String password, HttpServletRequest request){
 		User user = userRepository.findById(id);
 		if(password.equals(user.getPassword())){
+//			if(password.equals("1357")){
+//				return "login_admin"; 
+//			}
 			request.getSession().setAttribute("user", user);
 			News news = new News(user.getName(), new Date(), null);
 			newsRepository.save(news);
+			if(user.getPosition().equals("admin")){
+				return "redirect:/admin/lobby";
+			}
 			return "redirect:/lobby";
 		}else{
 			return "login_fail";

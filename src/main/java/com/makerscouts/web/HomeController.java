@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.makerscouts.domain.post.Post;
 import com.makerscouts.domain.post.PostRepository;
+import com.makerscouts.domain.user.Team;
+import com.makerscouts.domain.user.TeamRepository;
 import com.makerscouts.domain.user.User;
 import com.makerscouts.domain.user.UserRepository;
 
@@ -22,6 +25,9 @@ public class HomeController {
 	
 	@Autowired
 	private PostRepository postRepostory;
+	
+	@Autowired
+	private TeamRepository teamRepository;
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String home() {
@@ -38,8 +44,10 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/team", method=RequestMethod.GET)
-	public String showTeamPage(){
+	@RequestMapping(value="/team/{teamId}", method=RequestMethod.GET)
+	public String showTeamPage(@PathVariable int teamId, Model model){
+		Team teamList = teamRepository.findById(teamId);
+		model.addAttribute("team", teamList);
 		return "tile";
 	}
 	

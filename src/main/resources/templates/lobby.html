@@ -40,7 +40,7 @@
 							<figure class="image is-16x16" style="margin-right: 8px;">
 								<img src="http://bulma.io/images/jgthms.png">
 							</figure> ${session.user.name}님 환영합니다. 
-						</a> <a class="nav-item is-tab" href="/team">TEAM PAGE</a> <a
+						</a> <a class="nav-item is-tab" href="/team" th:href="@{/team/{id}(id=${session.user.team.id})}">TEAM PAGE</a> <a
 							class="nav-item is-tab" href="/logout">Log out</a>
 					</div>
 				</div>
@@ -109,14 +109,14 @@
 						
 					</div>
 				</div>
-				<div class="column">
+				<!-- <div class="column">
 					<div class="heading has-text-centered">
 						<h1 class="title">
 							<br>CHAT For All<br>
 						</h1>
-						<!--<h2 class="subtitle">
+						<h2 class="subtitle">
                         짝짝짝! 박수!
-                        </h2>-->
+                        </h2>
 					</div>
 					<div class="box scrollable"
 						style="height: 380px; overflow-y: scroll" id="chat-box">
@@ -126,10 +126,10 @@
 					<div class="field">
 						<p class="control">
 							<input class="input" id="chat-input" type="text" placeholder="대화하세요" onkeydown="keyForSend()">
-							<!--<button type="button" onclick="send();">send</button>-->
+							<button type="button" onclick="send();">send</button>
 						</p>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -168,31 +168,11 @@
                     <th>Qualification or relegation</th>
                     </tr>
                 </tfoot>-->
-				<tbody>
-					<tr>
-						<th>1</th>
-						<td>How do I live? How do I breathe? When you're not here
-							I'll suffocate.</td>
-						<td>운영팀</td>
-						<td><a
-							href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-							title="2016–17 UEFA Champions League">07-17</a></td>
-					</tr>
-					<tr>
-						<th>2</th>
-						<td><a href="https://en.wikipedia.org/wiki/Arsenal_F.C."
-							title="Arsenal F.C.">Arsenal</a></td>
-						<td>운영팀</td>
-						<td><a
-							href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-							title="2016–17 UEFA Champions League">07-17</a></td>
-					</tr>
-					
+				<tbody id="share_table">
+
 				</tbody>
 			</table>
-			<div class="block has-text-right">
-				<a href="/post" class="button is-medium is-primary is-outlined ">UPLOAD</a>
-			</div>
+			
 		</div>
 	</section>
 

@@ -93,7 +93,7 @@ $(document).ready(
 								+ "\">" + data[i].title + "</a></td><td>"
 								+ data[i].author + "</td><td>" + dateConvert(data[i].timestamp)
 								+ "</td></tr>";
-						$('#notice_table').prepend(frame);
+						$('#share_table').prepend(frame);
 					}
 				}
 			});
@@ -106,10 +106,10 @@ $(document).ready(
 					console.log(data);
 					for (var i = 0 ; i < data.length; i++){
 						if(data[i].title == null){
-							var frame = "<div class=\"notification is-primary\">"+"<button class=\"delete\"></button>"+"<b>"+data[i].id+"</b>님이 로그인하셨습니다. <br> <small>"+dateConvert(data[i].date)+"</small></div>";
+							var frame = "<div class=\"notification is-primary\">"+"<b>"+data[i].id+"</b>님이 로그인하셨습니다. <br> <small>"+dateConvert(data[i].date)+"</small></div>";
 							$('#newsfeed').prepend(frame);
 						}else{
-							var frame = "<div class=\"notification is-primary\">"+"<button class=\"delete\"></button>"+"<b>"+data[i].id+"</b>님이 "+data[i].title+"를 업로드 하셨습니다. <br> <small>"+dateConvert(data[i].date)+"</small></div>";
+							var frame = "<div class=\"notification is-primary\">"+"<b>"+data[i].id+"</b>님이 "+data[i].title+"를 업로드 하셨습니다. <br> <small>"+dateConvert(data[i].date)+"</small></div>";
 							$('#newsfeed').prepend(frame);
 						}
 					}
@@ -117,6 +117,4 @@ $(document).ready(
 			});
 
 
-
-			connect();
 		});
