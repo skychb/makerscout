@@ -47,11 +47,11 @@ public class Post implements Serializable{
 	
 	@Column(name="team_id", insertable = false, updatable = false)
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-	private int teamId;
+	private Integer teamId;
 	
 	private Post(){};
 	
-	public Post(String title, String author, String contents){
+	public Post(String title, String author, String contents, int teamId){
 		
 	}
 }

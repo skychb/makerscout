@@ -15,8 +15,7 @@
 <title>메이커스카우트 | Makerscouts</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css"
-	href="../css/bulma.css">
+<link rel="stylesheet" type="text/css" href="../css/bulma.css">
 <link rel="stylesheet" type="text/css" href="../landing.css">
 <link rel="stylesheet" type="text/css"
 	href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css">
@@ -64,11 +63,17 @@
 			<div class="container">
 				<div class="heading has-text-centered">
 					<div class="title">Uploading your post.</div>
-					<form id="postForm" method="post" action="/" th:attrappend="action=${type}">
-						<input class="input is-large" type="text" placeholder="포스트 제목" id="title"
-							name="title"> <input class="input is-medium" type="text"
-							placeholder="author" id="author" name="author" value="chiho">
-
+					<form id="postForm" method="post" action="/"
+						th:attrappend="action=${type}">
+						<input class="input is-large" type="text" placeholder="포스트 제목"
+							id="title" name="title"> 
+							<input class="input is-medium"
+							type="text" placeholder="author" id="author" name="author"
+							value="chiho"> 
+							<input class="input is-medium"
+							type="text" placeholder="teamId" id="teamId" name="teamId">
+							<input class="input is-medium"
+							type="text" placeholder="teamId" id="teamId" name="team_id">
 						<textarea class="form-control" id="summernote" name="contents"
 							placeholder="마음껏 적어보아요." maxlength="140" rows="7"></textarea>
 						<div class="form-group">
