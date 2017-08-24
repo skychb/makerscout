@@ -6183,7 +6183,6 @@ label.panel-block:hover {
 
 .hero .nav {
   background: none;
-  box-shadow: 0 1px 0 rgba(219, 219, 219, 0.3);
 }
 
 .hero .tabs ul {
@@ -6507,9 +6506,9 @@ label.panel-block:hover {
   color: whitesmoke;
 }
 
-.hero.is-dark .nav {
+/* .hero.is-dark .nav {
   box-shadow: 0 1px 0 rgba(245, 245, 245, 0.2);
-}
+} */
 
 @media screen and (max-width: 768px) {
   .hero.is-dark .nav-menu {

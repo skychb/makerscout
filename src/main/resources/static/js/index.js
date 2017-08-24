@@ -109,4 +109,27 @@ $(document)
 							$('#postList').prepend(templates);
 						}
 					});
+
+					var teamData = {
+						teamData : [
+						{"id" : 1, "teamName" : "EDM", "school" : "대전 하기중학교", "member" : "김준성, 한승연, 류태훈, 박지윤, 정주은"},
+						{"id" : 2, "teamName" : "젤라토레", "school" : "유성여자고등학교", "member" : "전다은, 김유진, 정나영, 심예슬"},
+						{"id" : 3, "teamName" : "MS", "school" : "서울로봇고등학교", "member" : "노신행, 임형섭, 이정민, 장현성, 최성호, 김지우"},
+						{"id" : 4, "teamName" : "우연히", "school" : "불곡고등학교", "member" : "주기쁨, 김예담, 김민경, 염수연"},
+						{"id" : 5, "teamName" : "보니따", "school" : "서울국제고등학교", "member" : "강혜수, 임서영, 김채현, 임선아"},
+						{"id" : 6, "teamName" : "겜잘알", "school" : "석호중학교", "member" : "정성욱, 김시우, 김예준, 장승환, 박연서, 김승현"},
+						{"id" : 7, "teamName" : "슬러시", "school" : "예봉중학교", "member" : "박지훈, 박홍준, 유주형, 박용준"},
+						{"id" : 8, "teamName" : "공감 요정들", "school" : "경기모바일과학고등학교", "member" : "김요셉, 문요한, 김진우, 박승우, 정우성, 강이찬"},
+						{"id" : 9, "teamName" : "YUM", "school" : "이천양정여자고등학교", "member" : "안선영, 장주희, 이수미, 정미영"},
+						{"id" : 10, "teamName" : "정조, 암흑에 서다", "school" : "수성고등학교", "member" : "백어진, 김윤수, 최혁수, 홍성익"},
+						{"id" : 11, "teamName" : "VISION", "school" : "고양외국어고등학교", "member" : "조은아, 김비, 김민서, 김서영, 유지원"}, 
+						{"id" : 12, "teamName" : "베이커스", "school" : "불곡고등학교", "member" : "김현민, 이하준, 왕서윤, 전기주, 김자은, 손서연"},
+						{"id" : 13, "teamName" : "UNIT:A-PES", "school" : "하남고등학교", "member" : "채현수, 이병현, 임인우, 박선우, 강주원"},
+						{"id" : 14, "teamName" : "걸크러시", "school" : "홍천고등학교", "member" : "권예진, 송수빈, 신서영, 허지현, 부석진, 임은지"},
+						{"id" : 15, "teamName" : "쿼터백s", "school" : "도장중학교", "member" : "김승수, 김범준, 박성우, 이준서, 김동민, 이정연"},
+					]};
+					var source = $('#list-template').html();
+					var list_template = Handlebars.compile(source);
+					var html = list_template(teamData);
+					$('footer').append(html);
 				});

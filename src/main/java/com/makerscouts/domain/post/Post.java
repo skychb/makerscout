@@ -41,12 +41,7 @@ public class Post implements Serializable{
 	@Column(nullable = false, length=100000000)
 	private String contents;
 	
-	@ManyToOne
-	@JoinColumn(foreignKey=@ForeignKey(name="team_id"))
-	private Team team;
-	
-	@Column(name="team_id", insertable = false, updatable = false)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@Column
 	private Integer teamId;
 	
 	private Post(){};
