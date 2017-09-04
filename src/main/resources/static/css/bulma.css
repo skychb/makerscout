@@ -4416,9 +4416,9 @@ a.nav-item.is-tab.is-active {
   width: 100%;
 }
 
-.nav.has-shadow {
+/* .nav.has-shadow {
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
-}
+} */
 
 .pagination {
   font-size: 1rem;

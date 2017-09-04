@@ -24,7 +24,7 @@ public class HomeController {
 	private UserRepository userRepository; 
 	
 	@Autowired
-	private PostRepository postRepostory;
+	private PostRepository postRepository;
 	
 	@Autowired
 	private TeamRepository teamRepository;
@@ -51,6 +51,13 @@ public class HomeController {
 		return "tile";
 	}
 	
+	@RequestMapping(value="/teampost/{teamId}", method=RequestMethod.GET)
+	public String showTeamPost(@PathVariable int teamId, Model model){
+		List<Post> teamList = postRepository.findByTeamId(teamId);
+		model.addAttribute("post", teamList);
+		return "list_team";
+	}
+	
 	@RequestMapping(value="/user/")
 	public String view(Model model){
 		List<User> userList = userRepository.findAll();
@@ -60,7 +67,7 @@ public class HomeController {
 	
 	@RequestMapping(value="/lobby", method=RequestMethod.GET)
 	public String lobbyView(Model model){
-		List<Post> postList = postRepostory.findAll();
+		List<Post> postList = postRepository.findAll();
 		return "lobby";
 	}
 	

@@ -29,7 +29,7 @@ public class UserController {
 	
 	@GetMapping("/admin/login")
 	public String accessAdminLogin(){
-		return "login_admin";
+		return "login";
 	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)

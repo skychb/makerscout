@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon"
+	href="http://www.makerschool.kr/beta/wp-content/uploads/2017/02/cropped-pavicon-32x32.png"
+	sizes="32x32" />
+<link rel="icon"
+	href="http://www.makerschool.kr/beta/wp-content/uploads/2017/02/cropped-pavicon-192x192.png"
+	sizes="192x192" />
+<link rel="apple-touch-icon-precomposed"
+	href="http://www.makerschool.kr/beta/wp-content/uploads/2017/02/cropped-pavicon-180x180.png" />
+<title>메이커스카우트 | Makerscouts</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="../css/bulma.css">
+<link rel="stylesheet" type="text/css" href="../landing.css">
+	
+
+</head>
+<body>
+	<section class="hero">
+		<div class="container">
+			<nav class="nav has-shadow">
+				<div class="container">
+					<div class="nav-left">
+						<a href="/" class="nav-item"> <img
+							src="http://haeyumsi.cdn3.cafe24.com/makerscouts_logo_or.png"
+							alt="Description">
+						</a> <a class="nav-item is-tab is-hidden-mobile disable" th:text="메이커스카우트"></a>
+					</div>
+					<span class="nav-toggle"> <span></span> <span></span> <span></span>
+					</span>
+					<div class="nav-right nav-menu">
+						 <!-- <div class="idForChat" th:text="${session.user.name}" style="display:none;"></div>
+						 <a	class="nav-item is-tab" th:utext="|${session.user.name}님 환영합니다!|" >
+							<figure class="image is-16x16" style="margin-right: 8px;">
+								<img src="http://bulma.io/images/jgthms.png">
+							</figure> ${session.user.name}님 환영합니다. 
+						</a> <a class="nav-item is-tab" href="/team" th:href="@{/team/{id}(id=${session.user.team.id})}">TEAM PAGE</a> <a
+							class="nav-item is-tab" href="/logout">Log out</a> -->
+					</div>
+				</div>
+			</nav>
+		</div>
+	</section>
+
+	<section class="hero">
+		<div class="container">
+			<!-- <div class="heading has-text-centered">
+				<h1 class="title">
+					<br>Progress Bar<br>
+				</h1>
+				<progress class="progress" value="15" max="100">15%</progress>
+
+				<h2 class="subtitle">90 Days To go.</h2>
+			</div> -->
+
+
+			<div class="heading has-text-centered">
+				<h1 class="title">
+					<br>포스트 리스트
+				</h1>
+				<!--<h2 class="subtitle">
+                짝짝짝! 박수!
+                </h2>-->
+			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th><abbr title="Number">No.</abbr></th>
+						<th>Title</th>
+						<th><abbr title="Writer">Writer</abbr></th>
+						<th><abbr title="Date">Date</abbr></th>
+					</tr>
+				</thead>
+				<!--<tfoot>
+					<tr>
+						<th><abbr title="Number">No.</abbr></th>
+						<th>Title</th>
+						<th><abbr title="Writer">Writer</abbr></th>
+						<th><abbr title="Date">Date</abbr></th>
+					</tr>
+				</tfoot>-->
+				<tbody id="notice_table">
+					
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="content has-text-centered">
+				<p>
+					<strong> Makerscouts All rights reserved.</strong>
+			</div>
+		</div>
+	</footer>
+
+	<script	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+	<script type="text/javascript" src="../js/lobby.js"></script>
+	<script async type="text/javascript" src="../src/bulma.js"></script>
+</body>
+</html>

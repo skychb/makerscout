@@ -15,11 +15,29 @@
 <title>메이커스카우트 | Makerscouts</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css"
-	href="../css/bulma.css">
+<link rel="stylesheet" type="text/css" href="../css/bulma.css">
 <link rel="stylesheet" type="text/css" href="../landing.css">
 </head>
 <body>
+		<script>
+				window.fbAsyncInit = function() {
+				  FB.init({
+					appId            : '1675960856041157',
+					autoLogAppEvents : true,
+					xfbml            : true,
+					version          : 'v2.10'
+				  });
+				  FB.AppEvents.logPageView();
+				};
+			  
+				(function(d, s, id){
+				   var js, fjs = d.getElementsByTagName(s)[0];
+				   if (d.getElementById(id)) {return;}
+				   js = d.createElement(s); js.id = id;
+				   js.src = "//connect.facebook.net/en_US/sdk.js";
+				   fjs.parentNode.insertBefore(js, fjs);
+				 }(document, 'script', 'facebook-jssdk'));
+			  </script>
 	<section class="hero is-dark" style="height: 350px;">
 		<div class="hero-head">
 			<div class="container">
@@ -63,9 +81,38 @@
 
 	</section>
 
-
-
 	<section class="section">
+			<div class="container">
+				<div class="heading has-text-centered">
+					<h1 class="title">메이커스카우트 2017 15개팀을 소개합니다.</h1>
+					<h2 class="subtitle">
+						<br> 서울 / 경기 / 대전 지역에서 선발된 메이커스카우트 멤버입니다. 
+					</h2>
+				</div>
+				<div class="columns" id="firstLine" style="margin-top: 20px;">
+
+
+				</div>
+				<div class="columns" id="secondLine">
+						
+						
+				</div>
+				<div class="columns" id="thirdLine">
+						
+						
+				</div>
+				<div class="columns" id="fourthLine">
+						
+						
+				</div>
+				<div class="columns" id="fifthLine">
+						
+						
+				</div>
+			</div>
+	</section>
+
+	<!-- <section class="section">
 		<div class="container">
 			<div class="heading has-text-centered">
 				<h1 class="title">메이커스카우트 2017 15개팀을 소개합니다.</h1>
@@ -76,8 +123,7 @@
 
 			<div class="columns" style="margin-top: 20px;">
 				<div class="column is-4">
-					<a class="modal" data-target="modal-1">
-						<div class="box">
+						<div class="box" id="schoolList1">
 							<article class="media">
 								<div class="media-left">
 									<figure class="image is-64x64">
@@ -94,10 +140,8 @@
 								</div>
 							</article>
 						</div>
-					</a>
 				</div>
 				<div class="column is-4">
-					<a class="modal" data-target="modal-2">
 					<div class="box">
 						<article class="media">
 							<div class="media-left">
@@ -115,10 +159,8 @@
 							</div>
 						</article>
 					</div>
-					</a>
 				</div>
 				<div class="column is-4">
-					<a class="modal" data-target="modal-3">
 					<div class="box">
 						<article class="media">
 							<div class="media-left">
@@ -136,13 +178,11 @@
 							</div>
 						</article>
 					</div>
-					</a>
 				</div>
 			</div>
 
 			<div class="columns hiding">
 				<div class="column is-4">
-					<a class="modal" data-target="modal-4">
 					<div class="box">
 						<article class="media">
 							<div class="media-left">
@@ -404,22 +444,22 @@
 			</div>
 			<center><a class="button is-primary is-outlined" id="clickForSlide">더보기</a></center>
 		</div>
-	</section>
+	</section> -->
 
 
-
+<!-- 
 	<section class="section">
 		<div class="container">
 			<div class="heading">
 				<h1 class="title has-text-centered">메이커의 프로젝트를 실시간으로 만나보세요!</h1><br><br>
-<!-- 				<h2 class="subtitle">여러분의 응원이 핵중요합니다. 응원하세요.</h2>
- -->			</div>
+				<h2 class="subtitle">여러분의 응원이 핵중요합니다. 응원하세요.</h2>
+			</div>
 
 			<div class="columns" id="postList" style="overflow-x: scroll; -webkit-overflow-scrolling: touch;">
 				
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<section class="section">
 		<div class="container">
@@ -494,15 +534,36 @@
 	{{/each}}
 	</script>
 	<script id="list-template" type="text/x-handlebars-template">
-	{{#each data}}
+		<div class="column is-4 modal{{id}}" id= "ready{{id}}">
+				<div class="box" >
+					<article class="media">
+						<div class="media-left">
+							<figure class="image is-64x64">
+								<img src="http://www.makerschool.kr/beta/wp-content/uploads/2017/02/cropped-pavicon-180x180.png"
+									alt="Image">
+							</figure>
+						</div>
+						<div class="media-content">
+							<div class="content">
+								<p>
+									<strong>{{teamName}}</strong> <br> {{school}}
+								</p>
+							</div>
+						</div>
+					</article>
+				</div>
+		</div>
+	</script>
+	<script id="modal-template" type="text/x-handlebars-template">
 		<div class="modal" id="modal{{id}}">
 			<div class="modal-background"></div>
-			<div class="modal-card">
+			<div class="modal-card has-text-centered">
 				<header class="modal-card-head">
-					<p class="modal-card-title">{{teamName}}<span>{{school}}</span></p>
-					<button class="delete"></button>
+					<p class="modal-card-title">{{teamName}}<span style="font-size:0.6em;vertical-align:text-bottom">[{{school}}]</span></p>
+					<button class="delete" aria-label="close"></button>
 				</header>
 				<section class="modal-card-body">
+					<img src="{{image}}" width="300px" height="60px">
 					<h1>소개</h1>
 					<p>
 						{{member}}
@@ -512,9 +573,12 @@
 						{{tech}}
 					</p>
 				</section>
+				<footer class="modal-card-foot">
+						<a href="/teampost/{{id}}"><button class="button is-success"> 포스트 보러가기</button></a>
+						<button class="button" disabled>인터뷰 보러가기</button>
+				</footer>
 			</div>
 		</div>
-	{{/each}}
 	</script>
 	
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
