@@ -50,9 +50,6 @@ public class PostController implements Serializable{
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public String setPost(Post post, HttpSession session){
 		post.setTimestamp(new Date());
-		post.setTeamId(1);
-		News news = new News(post.getAuthor(), new Date(), post.getTitle());
-		newsRepository.save(news);
 		return "redirect:/post/"+postRepository.save(post).getPid();
 	}	
 }
