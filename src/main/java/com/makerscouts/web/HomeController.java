@@ -71,7 +71,7 @@ public class HomeController {
 		return "lobby";
 	}
 	
-	@GetMapping(value="/admin/lobby")
+	@GetMapping(value="/admin")
 	public String adminLobby(){
 		return "lobby_admin";
 	}
