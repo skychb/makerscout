@@ -45,6 +45,9 @@ public class Team implements Serializable{
 	@Column
 	private String agenda;
 	
+	@Column
+	private String icon;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy="team", fetch=FetchType.LAZY)
 	private List<User> user;
