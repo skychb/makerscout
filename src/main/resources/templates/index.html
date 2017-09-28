@@ -17,6 +17,50 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="../css/bulma.css">
 <link rel="stylesheet" type="text/css" href="../landing.css">
+<link rel="stylesheet" type="text/css" href="../css/slick.css"/>
+<link rel="stylesheet" type="text/css" href="../css/slick-theme.css"/>
+ <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
 		<script>
@@ -114,22 +158,65 @@
 			</div>
 	</section>
 
-
-<!-- 
-	<section class="section">
+<section class="section">
 		<div class="container">
 			<div class="heading">
-				<h1 class="title has-text-centered">메이커의 프로젝트를 실시간으로 만나보세요!</h1><br><br>
-				<h2 class="subtitle">여러분의 응원이 핵중요합니다. 응원하세요.</h2>
+				<h1 class="title has-text-centered">메이커스카우트 소식</h1><br>
+				<h2 class="subtitle has-text-centered">공지사항과 자세한 활동 내용을 확인하세요.</h2>
 			</div>
 
 			<div class="columns" id="postList" style="overflow-x: scroll; -webkit-overflow-scrolling: touch;">
 				
 			</div>
 		</div>
-	</section> -->
+	</section>
 
-	<section class="section">
+<section class="section">
+		<div class="container has-text-centered">
+			<div class="heading">
+				<h1 class="title has-text-centered">사진으로 보는 메이커스카우트</h1><br><br>
+			</div>
+			<div class="carousel">
+			  <div>
+			    <img src="http://haeyumsi.cdn3.cafe24.com/photo01.jpg" alt="orange tree" />
+			  </div>
+			  <div class="carousel-cell" style="align:center">
+			    <img src="http://haeyumsi.cdn3.cafe24.com/photo02.jpg" alt="One World Trade" />
+			  </div>
+			  <div class="carousel-cell">
+			    <img src="http://haeyumsi.cdn3.cafe24.com/photo03.jpg" alt="2" />
+			  </div>
+			  <div class="carousel-cell">
+			    <img src="http://haeyumsi.cdn3.cafe24.com/photo04.jpg" alt="cat nose" />
+			  </div>
+			  <div class="carousel-cell">
+			    <img src="http://haeyumsi.cdn3.cafe24.com/photo05.jpg" alt="contrail" />
+			  </div>
+			  <div class="carousel-cell">
+			    <img src="http://haeyumsi.cdn3.cafe24.com/photo06.jpg" alt="golden hour" />
+			  </div>
+			  <div class="carousel-cell">
+			    <img src="http://haeyumsi.cdn3.cafe24.com/photo07.jpg" alt="flight formation" />
+			  </div>
+			  <div class="carousel-cell">
+			    <img src="http://haeyumsi.cdn3.cafe24.com/photo08.jpg" alt="flight formation" />
+			  </div>
+			  <div class="carousel-cell">
+			    <img src="http://haeyumsi.cdn3.cafe24.com/photo09.jpg" alt="flight formation" />
+			  </div>
+			  <div class="carousel-cell">
+			    <img src="http://haeyumsi.cdn3.cafe24.com/photo10.jpg" alt="flight formation" />
+			  </div>
+			</div>
+				
+			</div>
+	</section>
+
+
+
+	 
+
+	<!-- <section class="section">
 		<div class="container">
 			<div class="heading has-text-centered">
 				<h1 class="title" style="font-weight:450; font-size:2.2rem;">숫자로 보는 메이커스카우트</h1>
@@ -156,14 +243,14 @@
 				</div>
 			</nav>
 		</div>
-	</section>
+	</section> -->
 
 	<footer class="footer" style="background-color:#d3d3d3">
   <div class="container">
     <div class="columns">
       <div class="column is-4">
         <div id="about" class="content">
-          <strong>주관</strong> <a style="margin-left:10px;" href="http://facebook.com/makersnmakers">Makers</a><br>
+          <strong style="bottom:20px;">주관</strong> <img style="width:150px; margin-left:10px;" src="http://haeyumsi.cdn3.cafe24.com/makers_logo_wh.png" alt="cprogram logo"><br>
           <strong>후원</strong> <img style="width:150px; margin-left:10px;margin-top:10px;" src="http://c-program.org/wp-content/themes/cprogram/images/new/layout/logo_black.png" alt="cprogram logo">
         </div>
       </div>
@@ -185,9 +272,9 @@
         </div>
       </div>
       <div class="column is-4">
-        <div id="sister">
+        <div id="sister" >
           <p>
-            <strong>ⓒ MAKERS ALL RIGHTS RESERVED </strong>
+            <strong style="margin-top:100px">ⓒ MAKERS ALL RIGHTS RESERVED </strong>
           </p>
         </div>
       </div> 
@@ -275,6 +362,18 @@
 	
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+	<script src="../js/slick.js"></script>
+	 <script type="text/javascript">
+    $(document).ready(function(){
+      $('.carousel').slick({
+    	  dots: true,
+    	  infinite: true,
+    	  speed: 500,
+    	  fade: true,
+    	  cssEase: 'linear'
+      });
+    });
+  </script>
 	<script async type="text/javascript" src="../src/bulma.js"></script>
 	<script type="text/javascript" src="../js/index.js"></script>
 </body>

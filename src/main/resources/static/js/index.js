@@ -31,7 +31,7 @@ $(document)
 												return arrList[i + 1];
 											}
 										}
-										return "http://upload2.inven.co.kr/upload/2015/05/15/bbs/i13359164428.png";
+										return "https://pbs.twimg.com/media/DHslv-iXgAIT7Q-.jpg";
 									});
 
 					Handlebars.registerHelper('deleteHtml', function(html1) {
@@ -101,7 +101,7 @@ $(document)
 							});
 
 					$.ajax({
-						url : "/post/list",
+						url : "/notice/list",
 						type : "GET",
 						dataType : 'json',
 						success : function(data) {
