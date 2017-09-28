@@ -149,7 +149,7 @@ body {
 }
 
 a {
-  color: #ff9800;
+  color: #363636;
   cursor: pointer;
   text-decoration: none;
   -webkit-transition: none 86ms ease-out;
@@ -157,7 +157,7 @@ a {
 }
 
 a:hover {
-  color: #363636;
+  color: #ff9800;
 }
 
 code {

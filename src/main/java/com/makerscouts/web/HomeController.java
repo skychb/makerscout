@@ -29,7 +29,7 @@ public class HomeController {
 	@Autowired
 	private TeamRepository teamRepository;
 	
-	@RequestMapping(value="/", method=RequestMethod.GET)
+	@RequestMapping(value="/about", method=RequestMethod.GET)
 	public String home() {
 		return "promotion";
 	}
@@ -39,7 +39,7 @@ public class HomeController {
 		return "register";
 	}
 	
-	@GetMapping(value="/home")
+	@GetMapping(value="/")
 	public String realHome(){
 		return "index";
 	}
