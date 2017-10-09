@@ -3136,8 +3136,8 @@ input[type="submit"].button {
 
 .title {
   color: #363636;
-  font-size: 2rem;
-  font-weight: 300;
+  font-size: 35.2px;
+  font-weight: 600;
   line-height: 1.125;
 }
 
@@ -3180,7 +3180,7 @@ input[type="submit"].button {
 .subtitle {
   color: #4a4a4a;
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.25;
 }
 
@@ -4233,7 +4233,7 @@ input[type="submit"].button {
           flex-grow: 0;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  font-size: 1rem;
+  font-size: 1.4rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -4250,7 +4250,7 @@ input[type="submit"].button {
 }
 
 .nav-item img {
-  max-height: 1.75rem;
+  max-height: 2rem;
 }
 
 .nav-item .tag:first-child:not(:last-child) {
@@ -7086,7 +7086,7 @@ label.panel-block:hover {
 }
 
 .hero.is-fullheight {
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .hero.is-fullheight .hero-body {
