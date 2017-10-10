@@ -39,6 +39,11 @@ public class HomeController {
 		return "register";
 	}
 	
+	@RequestMapping(value="/faq", method=RequestMethod.GET)
+	public String faq(){
+		return "faq";
+	}
+	
 	@GetMapping(value="/")
 	public String realHome(){
 		return "index";

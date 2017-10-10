@@ -60,6 +60,16 @@
     .slick-current {
       opacity: 1;
     }
+    
+    .table th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
   </style>
 </head>
 <body>
@@ -98,7 +108,7 @@
 						</span>
 						<div class="nav-right nav-menu">
 							<a class="nav-item" href="http://makerscouts.co.kr/about"> About </a> 
-							<a class="nav-item" href="http://blog.naver.com/makerschool_/221044538246"> FAQ </a>
+							<a class="nav-item" href="http://makerscouts.co.kr/faq"> FAQ </a>
 							<!-- <span class="nav-item"> <a
 								class="button is-default" href="/login" th:unless="${session.user}"> 멤버 로그인 </a>
 							</span> -->
@@ -253,10 +263,10 @@
   <div class="container">
     <div class="columns" style="margin:20px;">
       <div class="column is-4">
-        <div id="about" class="content">
-          <strong style="bottom:20px;">주관</strong> <img style="width:150px; margin-left:10px;" src="http://haeyumsi.cdn3.cafe24.com/makers_logo_wh.png" alt="cprogram logo"><br>
-          <strong>후원</strong> <img style="width:150px; margin-left:10px;margin-top:10px;" src="http://c-program.org/wp-content/themes/cprogram/images/new/layout/logo_black.png" alt="cprogram logo">
-        </div>
+        <div id="about" class="content" style="float:left">
+       		<p style=""><strong style="padding-bottom:20px;">주관</strong> <img style="height:20px; margin-left:10px;" src="http://haeyumsi.cdn3.cafe24.com/makers_logo_wh.png" alt="cprogram logo"><br></p>
+			<p style="margin-top:10px;"><strong>후원</strong> <img style="height:20px; margin-left:10px;" src="http://c-program.org/wp-content/themes/cprogram/images/new/layout/logo_black.png" alt="cprogram logo"></p>
+		</div>
       </div>
       <div class="column is-3">
         <div id="share" class="content">
@@ -268,9 +278,9 @@
             </p>
           </div>
           
-          <div id="social">
+          <div id="social" style="margin-top:20px">
             <div class="fb-like" data-href="https://www.facebook.com/makerscouts" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
-			
+	
           </div>
           
         </div>
@@ -278,7 +288,7 @@
       <div class="column is-4">
         <div id="sister" >
           <p>
-            <strong style="margin-top:100px">ⓒ MAKERS ALL RIGHTS RESERVED </strong>
+            <strong style="margin-top:100px;float:right">ⓒ MAKERS ALL RIGHTS RESERVED </strong>
           </p>
         </div>
       </div> 
