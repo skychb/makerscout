@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.makerscouts.domain.post.Notice;
 import com.makerscouts.domain.post.NoticeRepository;
+import com.makerscouts.domain.post.Post;
 
 @Controller
 @RequestMapping("/notice")
@@ -31,6 +32,35 @@ public class NoticeController implements Serializable{
 //		postRepoitory.save(newPost);
 //		return "redirect:/post";
 //	};
+	
+	@RequestMapping(value="/edit/{id}")
+	public String getPostForEdit(Model model, @PathVariable long id){
+		Notice notice = noticeRepository.findOne(id);
+		model.addAttribute("post", notice);
+		return "upload_edit";
+	}
+	
+	@RequestMapping(value="edit/{id}", method=RequestMethod.PUT)
+	public String putPost(Post post, @PathVariable long id){
+		Notice fetchNotice = noticeRepository.findOne(id);
+		if (fetchNotice == null) {
+			return null;
+		}
+		fetchNotice.setContents(post.getContents());
+		fetchNotice.setTitle(post.getTitle());
+		fetchNotice.setAuthor(post.getAuthor());
+		
+		noticeRepository.save(fetchNotice);
+		
+		return "redirect:/post/"+Long.toString(fetchNotice.getPid());
+	}
+	
+	@RequestMapping(value="/delete/{id}")
+	public String deletePost(Model model, @PathVariable long id){
+		Notice post = noticeRepository.findOne(id);
+		noticeRepository.delete(post);
+		return "redirect:/";
+	}
 	
 	@RequestMapping(value="/{id}")
 	public String getPost(Model model, @PathVariable long id){

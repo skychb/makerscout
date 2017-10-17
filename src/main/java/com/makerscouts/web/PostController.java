@@ -48,32 +48,45 @@ public class PostController implements Serializable{
 		return "show";
 	}
 	
+//	@RequestMapping(value="/edit/{id}")
+//	public String getEditingPost(Model model, @PathVariable long id){
+//		Post post = postRepository.findOne(id);
+//		model.addAttribute("post", post);
+//		return "upload";
+//	}
+	
 	@RequestMapping(value="/edit/{id}")
-	public String getEditingPost(Model model, @PathVariable long id){
+	public String getPostForEdit(Model model, @PathVariable long id){
 		Post post = postRepository.findOne(id);
 		model.addAttribute("post", post);
-		return "upload";
+		return "upload_edit";
 	}
 	
 	@RequestMapping(value="edit/{id}", method=RequestMethod.PUT)
-	public ResponseEntity<Post> putPost(Post post, @PathVariable long id){
+	public String putPost(Post post, @PathVariable long id){
 		Post fetchPost = postRepository.findOne(id);
 		if (fetchPost == null) {
 			return null;
 		}
 		fetchPost.setContents(post.getContents());
-		fetchPost.setTitle(post.getContents());
-		fetchPost.setUpdated(new Date());
+		fetchPost.setTitle(post.getTitle());
 		fetchPost.setAuthor(post.getAuthor());
 		
 		postRepository.save(fetchPost);
 		
-		return new ResponseEntity<Post>(fetchPost, HttpStatus.OK);
+		return "redirect:/post/"+Long.toString(fetchPost.getPid());
+	}
+	
+	@RequestMapping(value="/delete/{id}")
+	public String deletePost(Model model, @PathVariable long id){
+		Post post = postRepository.findOne(id);
+		postRepository.delete(post);
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public String setPost(Post post, HttpSession session){
 		post.setTimestamp(new Date());
 		return "redirect:/post/"+postRepository.save(post).getPid();
-	}	
+	}
 }

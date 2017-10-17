@@ -52,9 +52,27 @@ $(document).ready(
 								+ "\">" + data[i].title + "</a></td><td>"
 								+ data[i].author + "</td><td>" + dateConvert(data[i].timestamp)
 								+ "</td></tr>";
-						$('#notice_table').prepend(frame);
+						if(data[i].author.substring(0,3) === '매니저'){
+							$('#notice_table').prepend(frame);
+						}else{
+							$('#part_table').prepend(frame);
+						}
 					}
 				}
+			});
+			
+			$('#mentor_trig').click(function(){
+				$('#mentor').show();
+				$('#part').hide();
+				$('#mentor_trig').addClass('is-active');
+				$('#part_trig').removeClass('is-active');
+			});
+			
+			$('#part_trig').click(function(){
+				$('#mentor').hide();
+				$('#part').show();
+				$('#mentor_trig').removeClass('is-active');
+				$('#part_trig').addClass('is-active');
 			});
 
 //			$.ajax({
