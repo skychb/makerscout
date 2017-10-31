@@ -36,23 +36,23 @@ public class NoticeController implements Serializable{
 	@RequestMapping(value="/edit/{id}")
 	public String getPostForEdit(Model model, @PathVariable long id){
 		Notice notice = noticeRepository.findOne(id);
-		model.addAttribute("post", notice);
-		return "upload_edit";
+		model.addAttribute("notice", notice);
+		return "edit_notice";
 	}
 	
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.PUT)
-	public String putPost(Post post, @PathVariable long id){
+	public String putPost(Notice notice, @PathVariable long id){
 		Notice fetchNotice = noticeRepository.findOne(id);
 		if (fetchNotice == null) {
 			return null;
 		}
-		fetchNotice.setContents(post.getContents());
-		fetchNotice.setTitle(post.getTitle());
-		fetchNotice.setAuthor(post.getAuthor());
+		fetchNotice.setContents(notice.getContents());
+		fetchNotice.setTitle(notice.getTitle());
+		fetchNotice.setAuthor(notice.getAuthor());
 		
 		noticeRepository.save(fetchNotice);
 		
-		return "redirect:/post/"+Long.toString(fetchNotice.getPid());
+		return "redirect:/notice/"+Long.toString(fetchNotice.getPid());
 	}
 	
 	@RequestMapping(value="/delete/{id}")
