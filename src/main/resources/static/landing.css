@@ -5,7 +5,8 @@ body {
   background-color: #F62459;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('http://haeyumsi.cdn3.cafe24.com/photo04.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('http://haeyumsi.cdn3.cafe24.com/photo04.jpg');
+  background-position : 20% 25%;
 }
 .nav {
   padding: 20px 0;
