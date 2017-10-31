@@ -40,7 +40,7 @@ public class NoticeController implements Serializable{
 		return "upload_edit";
 	}
 	
-	@RequestMapping(value="edit/{id}", method=RequestMethod.PUT)
+	@RequestMapping(value="/edit/{id}", method=RequestMethod.PUT)
 	public String putPost(Post post, @PathVariable long id){
 		Notice fetchNotice = noticeRepository.findOne(id);
 		if (fetchNotice == null) {
