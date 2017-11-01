@@ -20,12 +20,9 @@ $(document)
 										// /"([^"]*)[.png|.jpg|.jpeg|.gif]"/g;
 										// var result = pattern.exec(url);
 										var arrList = url.split("\"");
-										console.log(arrList);
 										for (var i = 0; i < arrList.length; i++) {
 											var value = arrList[i];
-											console.log(value.substr(
-													value.length - 8,
-													value.length));
+											
 											if (value.substr(value.length - 8,
 													value.length) == "img src=") {
 												return arrList[i + 1];
@@ -108,7 +105,6 @@ $(document)
 							var posts = {};
 							posts["data"] = data;
 							var templates = template_up(posts);
-							console.log(posts);
 							$('#postList').prepend(templates);
 						}
 					});
